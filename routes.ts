@@ -1,6 +1,6 @@
 import { Router } from "express";
-import { listCategories } from "./src/app/useCases/listCategories.js";
-import { createCategory } from "./src/app/useCases/createCategory.js";
+import { listCategories } from "./src/app/useCases/categories/listCategories.js";
+import { createCategory } from "./src/app/useCases/categories/createCategory.js";
 
 export const routes = Router();
 
