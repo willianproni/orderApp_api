@@ -1,8 +1,9 @@
 import { Router } from "express";
+import { listCategories } from "./src/app/useCases/listCategories.js";
 
 export const routes = Router();
 
-routes.get("/categories", (req, res) => {});
+routes.get("/categories", listCategories);
 
 routes.post("/categories", (req, res) => {});
 
