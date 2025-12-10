@@ -1,11 +1,12 @@
 import { Router } from "express";
 import { listCategories } from "./src/app/useCases/listCategories.js";
+import { createCategory } from "./src/app/useCases/createCategory.js";
 
 export const routes = Router();
 
 routes.get("/categories", listCategories);
 
-routes.post("/categories", (req, res) => {});
+routes.post("/categories", createCategory);
 
 routes.get("/products", (req, res) => {});
 
