@@ -1,5 +1,6 @@
 import express from "express";
 import mongoose from "mongoose";
+import { routes } from "../routes.js";
 
 mongoose
   .connect("mongodb://localhost:27017")
@@ -8,7 +9,9 @@ mongoose
 
     const app = express();
 
-    app.listen(3000, () => {
+    app.use(routes);
+
+    app.listen(3001, () => {
       console.log("🚀 Server is running on http://localhost:3001");
     });
   })
