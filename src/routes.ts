@@ -14,6 +14,10 @@ export const routes = Router();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+//  O Multer é o middleware que deixa o Node/Express pronto para receber
+//  arquivos enviados por formulário e salvá-los, e no caso ele está
+//  sendo usado para armazenar imagens no uploads/ via diskStorage.
+
 const upload = multer({
   storage: multer.diskStorage({
     destination(req, file, cb) {
@@ -22,7 +26,7 @@ const upload = multer({
     filename(req, file, cb) {
       const uniqueName = `${Date.now()}-${file.originalname}`;
       cb(null, uniqueName);
-    }
+    },
   }),
 });
 
