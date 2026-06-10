@@ -21,7 +21,7 @@ export async function createProducts(req: Request, res: Response) {
     const product = await Product.create({
       name,
       description,
-      ingredients: JSON.parse(ingredients),
+      ingredients: ingredients ? JSON.parse(ingredients) : [],
       imagePath,
       price: Number(price),
       category: category,
