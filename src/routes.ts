@@ -8,6 +8,7 @@ import { createProducts } from "./app/useCases/products/createProducts.js";
 import { deleteCategory } from "./app/useCases/categories/deleteCategory.js";
 import multer from "multer";
 import { fileURLToPath } from "node:url";
+import { listProductsByCategoryId } from "./app/useCases/categories/listProductsByCategoryId.js";
 
 export const routes = Router();
 
@@ -40,7 +41,7 @@ routes.get("/products", listProducts);
 
 routes.post("/products", upload.single("imagePath"), createProducts);
 
-routes.get("/categories/:categoryId/products", (req, res) => {});
+routes.get("/categories/:categoryId/products", listProductsByCategoryId);
 
 routes.get("/orders", (req, res) => {});
 
